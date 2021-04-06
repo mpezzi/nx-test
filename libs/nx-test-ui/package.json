@@ -1,5 +1,9 @@
 {
   "name": "@mpezzi/nx-test-ui",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git://github.com/mpezzi/nx-test.git",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^11.2.8",
