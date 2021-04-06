@@ -145,6 +145,43 @@
           }
         }
       }
+    },
+    "nx-test-ui": {
+      "projectType": "library",
+      "root": "libs/nx-test-ui",
+      "sourceRoot": "libs/nx-test-ui/src",
+      "prefix": "nx-test",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/nx-test-ui/tsconfig.lib.json",
+            "project": "libs/nx-test-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/nx-test-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nx-test-ui/src/**/*.ts",
+              "libs/nx-test-ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nx-test-ui"],
+          "options": {
+            "jestConfig": "libs/nx-test-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
